@@ -18,7 +18,7 @@ In this project, I worked with Active Directory and Powershell to create default
 
 ![alt text][windows_server_2019_name]
 
-[windows_server_2019_name]: link here "Windows Server 2019"
+[windows_server_2019_name]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/server_2019_name_DC.png "Windows Server 2019"
 
 3. I set up 2 NICS for the VM - Adapter 1 is attached to NAT and will connect to our home internet and Adapter 2 is attached to the internal network
 
@@ -38,7 +38,7 @@ In this project, I worked with Active Directory and Powershell to create default
 
 ![alt text][adapter_names]
 
-[adapter_names]: link here "Adapter Names"
+[adapter_names]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/renamed_adapters.png "Adapter Names"
 
 11. Rename PC to "DC" and restart the VM
 
