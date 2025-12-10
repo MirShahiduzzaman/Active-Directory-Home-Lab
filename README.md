@@ -42,4 +42,44 @@ In this project, I worked with Active Directory and Powershell to create default
 
 11. Rename PC to "DC" and restart the VM
 
-12. EXPECT NEXT STEPS SOON
+12. After logging in, go to the network settings > Change Adapter Options. Then go to the properties for the Internal Adapter and set the IPv4 address to 172.16.0.1 with subnet mask 255.255.255.0. Keep Default Gateway empty because the domain controller itself will serve as the default gateway. Also, when active directory is installed, it automatically installs DNS, so we put its own IP address (172.16.0.1) as the DNS IP (alternatively, we can use the loopback address as well - 127.0.0.1)
+
+13. On the Server Manager dashboard, click add roles and features. After clicking next a few times, we reach the destination server selection, where we select itself and on the role selection, we check the 'Active Directory Domain Services' box. Finally, we can continue hitting 'next' then 'install'.
+
+![alt text][role_selection]
+
+[role_selection]: link here "Active Directory Domain Services"
+
+14. After installed, we notice a yellow sign on the flag icon in the dashboard, prompting us to promote this server to domain controller, which we click. We add new forest that we name 'mydomain.com' for testing purposes.
+
+![alt text][root_domain_name]
+
+[root_domain_name]: link here "Root Domain Name"
+
+15. After clicking next, we create a password, then moving on to the next screen a few times, we finally hit install. Note this will restart the computer.
+
+![alt text][domain_added]
+
+[domain_added]: link here "MYDOMAIN Domain"
+
+16. We will now create a domain admin account to use instead of the built in admin account. Start > Windows Administrative tools > Active Directory Users and Computers
+
+17. Right click mydomain.com > new > Organizational Unit. Name it _ADMINS, unchecking the protect container from accidental deletion box. Now, the _ADMINS folder is added
+
+18. Right click on _ADMINS folder > New > User. Fill out fields for Mir Shahiduzzaman admin account. We will use the naming scheme of a-(initial of first name)(last name). Then, we can set the password on the next screen, unchecking 'User must change password at next login' and checking 'Password never expires'. Finally, we head to next screen and select 'finish'.
+
+19. The account is not admin yet. To make it admin, go to the user properties and add it to the Domain_Admins group. The account is now admin
+
+20. To test our new account, log out then log in as other user, inputing a-mshahiduzzaman along with the password.
+
+21. Upon log in, we want to add RAS/NAT to allow windows 10 clients to be on a virtual private network while still being able to access internet through the domain controller. While on the account, we use the server manager to ad the 'Remote Access' role to the server. We will also install routing (as prompted on the next screen) and finally install.
+
+22. We head to routing and remote access through the dashboard and select our \_INTERNET_ adapter to connect to the internet and finish.
+
+23. Now, we want to set up our DHCP server to allow windows 10 clients to attain IP addresses, so we add the 'DHCP Server' role
+
+![alt text][dhcp_role]
+
+[dhcp_role]: link here "DHCP Role"
+
+24. TO BE UPDATED
