@@ -46,21 +46,17 @@ In this project, I worked with Active Directory and Powershell to create default
 
 13. On the Server Manager dashboard, click add roles and features. After clicking next a few times, we reach the destination server selection, where we select itself and on the role selection, we check the 'Active Directory Domain Services' box. Finally, we can continue hitting 'next' then 'install'.
 
-![alt text][role_selection]
+![alt text][add_active_directory_role]
 
-[role_selection]: link here "Active Directory Domain Services"
+[add_active_directory_role]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/add_active_directory_role.png "Active Directory Domain Services"
 
 14. After installed, we notice a yellow sign on the flag icon in the dashboard, prompting us to promote this server to domain controller, which we click. We add new forest that we name 'mydomain.com' for testing purposes.
 
 ![alt text][root_domain_name]
 
-[root_domain_name]: link here "Root Domain Name"
+[root_domain_name]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/root_domain_name.png "Root Domain Name"
 
 15. After clicking next, we create a password, then moving on to the next screen a few times, we finally hit install. Note this will restart the computer.
-
-![alt text][domain_added]
-
-[domain_added]: link here "MYDOMAIN Domain"
 
 16. We will now create a domain admin account to use instead of the built in admin account. Start > Windows Administrative tools > Active Directory Users and Computers
 
@@ -72,6 +68,10 @@ In this project, I worked with Active Directory and Powershell to create default
 
 20. To test our new account, log out then log in as other user, inputing a-mshahiduzzaman along with the password.
 
+![alt text][domain_added]
+
+[domain_added]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/MYDOMAIN_a-mshahiduzzaman_login.png "Other User in MYDOMAIN Domain"
+
 21. Upon log in, we want to add RAS/NAT to allow windows 10 clients to be on a virtual private network while still being able to access internet through the domain controller. While on the account, we use the server manager to ad the 'Remote Access' role to the server. We will also install routing (as prompted on the next screen) and finally install.
 
 22. We head to routing and remote access through the dashboard and select our \_INTERNET_ adapter to connect to the internet and finish.
@@ -80,6 +80,8 @@ In this project, I worked with Active Directory and Powershell to create default
 
 ![alt text][dhcp_role]
 
-[dhcp_role]: link here "DHCP Role"
+[dhcp_role]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/add_DHCP_server_role.png "DHCP Role"
 
-24. TO BE UPDATED
+24. Now, we set the DHCP scope to 172.16.0.100-200 with subnet mask 255.255.255.0, gateway 172.168.0.1 (the domain controller's IP address), and DNS 172.16.0.1, keeping the default value for lease time. Then, Autorize the DHCP server and refresh.
+
+25. TO BE UPDATED - Project Complete Just Documenting
