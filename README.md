@@ -84,4 +84,12 @@ In this project, I worked with Active Directory and Powershell to create default
 
 24. Now, we set the DHCP scope to 172.16.0.100-200 with subnet mask 255.255.255.0, gateway 172.168.0.1 (the domain controller's IP address), and DNS 172.16.0.1, keeping the default value for lease time. Then, Autorize the DHCP server and refresh.
 
-25. TO BE UPDATED - Project Complete Just Documenting
+25. For lab purposes, disable internet Explorer Enhanced Security Configuration
+
+26. Now, for creating 1000 users using a script, I had two files: one containing randomized names (I added my own name to the top for fun) and another file of the script we will run. We then open PowerShell ISE and for lab purposes, run 'Set-ExecutionPolicy Unrestricted' to allow the VM to run the script, and finally run the script file. This will result in about 1000 users, which can be found by opening 'Active Directory Users and Computers' and clicking the '_USERS' folder
+
+![alt text][1000_users]
+
+[1000_users]: link here "(About) 1000 Users Created"
+
+27. TO BE UPDATED - finished project but continuously updating documentation
