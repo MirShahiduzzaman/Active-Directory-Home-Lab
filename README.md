@@ -11,6 +11,10 @@ Microsoft Active Directory, PowerShell, VirtualBox Virtual Machine, Windows Serv
 ## Overview
 In this project, I worked with Active Directory and Powershell to create default profiles for 1000+ users. I ensured each user can log in to a domain and make use of the internet through their accounts.
 
+It is meant to simulate a mini corporate network where many employees were hired, consequently leading to the development and schedule run of an accounts creation batch file for the new employees. 
+
+It also simulates a corporate laptop, where employees log in using their corporate credentials.
+
 ## Procedure
 1. I installed the Windows 10 and Windows 10 Server 2019 ISO files for the VirtualBox VM.
 
