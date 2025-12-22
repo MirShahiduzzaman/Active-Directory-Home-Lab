@@ -90,6 +90,34 @@ In this project, I worked with Active Directory and Powershell to create default
 
 ![alt text][1000_users]
 
-[1000_users]: link here "(About) 1000 Users Created"
+[1000_users]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/_USERS_folder_created_and_populated.png "(About) 1000 Users Created"
 
-27. TO BE UPDATED - finished project but continuously updating documentation
+27. Last thing: Create and run Windows 10 VM. In VirtualBox main menu, configure Windows 10 VM initial settings, ensuring adapter 1 is set to the internal network and to allow bidirectional clipboard.
+
+28. Opening the Windows 10 VM, select 'I don't have a product key' and choose Windows 10 Pro (Note Windows 10 Home would likely not allow you to join the domain) and continue with set up
+
+29. Create the username and password (I created a user with username user and with no password) and disable all the options in the following screen
+
+30. To check if internet is working, open cmd line and run 'ipconfig'. You should see the ip address, subnet mask, and default gateway. (Note that if you are missing the default gateway info, go back to the Windows Server 2019 VM, head to DHCP settings, select Server Options, and configure the router settings, ensuring to set the ip address to 172.16.0.1. Then restart the DHCP server, go back to the Windows 10 client VM, and run 'ipconfig /renew' in cmd line and the info should be there)
+
+![alt text][ipconfig]
+
+[ipconfig]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/ipconfig.png "Running ipconfig"
+
+31. To check proper internet connectivity, ping google.com and it should show data for response times. Also ping mydomain.com, which would likewise show data for response times.
+
+32. Go to 'Rename this PC (advanced)' settings, changing computer name to 'CLIENT1' and domain to 'mydomain.com' and upon being prompted, enter the account info for an account associated with the 'mydomain.com' domain. Finally, select to restart the PC.
+
+33. In Windows Server 2019, go to DHCP settings. Then, navigate to IPv4 address leases within the scope and we will see the leased ip address for the Windows 10 client VM
+
+![alt text][leased_ip_address]
+
+[leased_ip_address]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/ip_address_leases.png "Successfully leased IP Address"
+
+34. Open Active Directory Users and Computers and we see that 'CLIENT1' has been successfully added as a part of the 'mydomain.com' domain. Note that if 'CLIENT1' is deleted from this list, we cannot log in to the computer using one of the accounts on the 'mydomain.com' domain
+
+35. Finally, to test if we can in fact log into an account from the 'mydomain.com' domain, we log out, then select 'other user' on sign in screen, inputting the details for one user in our domain. Once logged in, we can open cmd line and run 'whoami' to view the account's username!
+
+![alt text][whoami]
+
+[whoami]: https://github.com/MirShahiduzzaman/Active-Directory-Home-Lab/blob/main/mshahiduzzaman_whoami.png "running the 'whoami' cmd"
