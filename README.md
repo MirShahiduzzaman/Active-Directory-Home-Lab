@@ -9,7 +9,7 @@
 Microsoft Active Directory, PowerShell, VirtualBox Virtual Machine, Windows Server, Windows 10, Adapters, DHCP, DNS, IP, Scripting
 
 ## Overview
-In this project, I worked with Active Directory and Powershell to create default profiles for 1000+ users. I ensured each user can log in to a domain and make use of the internet through their accounts.
+In this project, I used Active Directory and Powershell to create default profiles for 1000+ users. I ensured each user can log in to a domain and make use of the internet through their accounts.
 
 This simulates a corporate network where many employees were hired, leading to the development and scheduled run of an accounts creation batch file for the new employees. 
 
